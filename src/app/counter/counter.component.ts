@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CounterService } from '../counter.service';
+import { InjectionService } from '../counter.service';
 
 @Component({
   selector: 'app-counter',
@@ -8,9 +8,9 @@ import { CounterService } from '../counter.service';
   `
 })
 export class CounterComponent {
-  constructor(private counterService: CounterService) { }
+  constructor(private countService: InjectionService) { }
 
   get counter() {
-    return this.counterService.counter;
+    return this.countService.counter;
   }
 }

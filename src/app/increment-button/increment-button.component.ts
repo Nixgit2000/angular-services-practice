@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
-import { CounterService } from '../counter.service';
+import { InjectionService } from '../counter.service';
 
 @Component({
   selector: 'app-increment-button',
   template: `
-    <button (click)="increment()">Increment</button>
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
   `
 })
 export class IncrementButtonComponent {
-  constructor(private counterService: CounterService) { }
+  constructor(private countService: InjectionService) { }
 
   increment() {
-    this.counterService.increment();
+    this.countService.increment();
+  }
+
+  decrement() {
+    this.countService.decrement();
   }
 }
